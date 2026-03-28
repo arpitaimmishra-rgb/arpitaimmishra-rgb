@@ -40,7 +40,24 @@
 
 ###
 
-<img src="https://raw.githubusercontent.com/ Arpit mishra arpitaimmishra-rgb/ Arpit mishra arpitaimmishra-rgb/output/snake.svg" alt="Snake animation" />
+name: Generate snake animation
+
+on:
+  schedule: # execute every 12 hours
+    - cron: "* */12 * * *"
+
+  workflow_dispatch:
+
+  push:
+    branches:
+    - main
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
 
 ###
 
